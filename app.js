@@ -38,8 +38,8 @@ var express = require("express");
     var app = express();
 
     app.get('/', function(req, res) {
-      //res.send('Hello World!');
-      res.sendFile("index.html",{"root":__dirname});
+      res.send('Hello World!');
+      //res.sendFile("index.html",{"root":__dirname});
   });
 
     var port = Number(process.env.PORT || 5000);
