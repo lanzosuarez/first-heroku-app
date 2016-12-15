@@ -28,15 +28,27 @@ var app = express();
 // app.listen(3000, function () {
 //   console.log('Example app listening on port 3000!')
 // })
-let express = require("express");
-let app = express();
+// let express = require("express");
+// let app = express();
     
-app.use(express.static(path.join(__dirname,"public")));
+// app.use(express.static(path.join(__dirname,"public")));
 
-var port = Number(process.env.PORT || 5000);
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
+
+var express = require("express");
+    var app = express();
+
+    app.get('/', function(req, res) {
+      //res.send('Hello World!');
+      res.sendFile("index.html",{"root":__dirname});
+  });
+
+    var port = Number(process.env.PORT || 5000);
+    app.listen(port, function() {
+      console.log("Listening on " + port);
+    });
+
+
+
 // const http = require('http');
 
 // const hostname = '127.0.0.1';
