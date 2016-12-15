@@ -31,16 +31,17 @@ var app = express();
 // let express = require("express");
 // let app = express();
     
-// app.use(express.static(path.join(__dirname,"public")));
+ 
 
 
 var express = require("express");
     var app = express();
 
-    app.get('/', function(req, res) {
-      res.send('Hello World!');
-      //res.sendFile("index.html",{"root":__dirname});
-  });
+  //   app.get('/', function(req, res) {
+  //     res.send('Hello World!');
+  //     //res.sendFile("index.html",{"root":__dirname});
+  // });
+  app.use(express.static(path.join(__dirname,"public")));
 
     var port = Number(process.env.PORT || 5000);
     app.listen(port, function() {
