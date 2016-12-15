@@ -23,12 +23,20 @@ var app = express();
 //    res.sendFile("services.html",{"root":__dirname});
 // })
 
+
+
+// app.listen(3000, function () {
+//   console.log('Example app listening on port 3000!')
+// })
+let express = require("express");
+let app = express();
+    
 app.use(express.static(path.join(__dirname,"public")));
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
-
+var port = Number(process.env.PORT || 5000);
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
 // const http = require('http');
 
 // const hostname = '127.0.0.1';
